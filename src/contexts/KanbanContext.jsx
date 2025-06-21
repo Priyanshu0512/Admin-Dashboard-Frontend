@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState } from "react";
-
+import { initialTasks } from "../constants/kanbanTask";
 const KanbanContext = createContext();
 
 export const useKanban = () => {
@@ -9,69 +9,6 @@ export const useKanban = () => {
   }
   return context;
 };
-
-const initialTasks = [
-  {
-    id: "1",
-    title: "Design System Updates",
-    description: "Update the design system components with new color palette",
-    status: "todo",
-    priority: "high",
-    assignee: "Sarah Chen",
-    dueDate: "2024-01-15",
-    tags: ["design", "ui"],
-  },
-  {
-    id: "2",
-    title: "API Integration",
-    description: "Integrate the new payment gateway API",
-    status: "in-progress",
-    priority: "medium",
-    assignee: "Mike Johnson",
-    dueDate: "2024-01-20",
-    tags: ["backend", "api"],
-  },
-  {
-    id: "3",
-    title: "User Testing",
-    description: "Conduct user testing for the new dashboard",
-    status: "review",
-    priority: "low",
-    assignee: "Emily Davis",
-    dueDate: "2024-01-25",
-    tags: ["testing", "ux"],
-  },
-  {
-    id: "4",
-    title: "Mobile Optimization",
-    description: "Optimize the application for mobile devices",
-    status: "done",
-    priority: "high",
-    assignee: "Alex Wilson",
-    dueDate: "2024-01-10",
-    tags: ["mobile", "frontend"],
-  },
-  {
-    id: "5",
-    title: "Database Migration",
-    description: "Migrate user data to the new database schema",
-    status: "todo",
-    priority: "high",
-    assignee: "David Brown",
-    dueDate: "2024-01-18",
-    tags: ["database", "backend"],
-  },
-  {
-    id: "6",
-    title: "Performance Optimization",
-    description: "Improve application loading times and performance",
-    status: "in-progress",
-    priority: "medium",
-    assignee: "Lisa Garcia",
-    dueDate: "2024-01-22",
-    tags: ["performance", "optimization"],
-  },
-];
 
 const columns = [
   { id: "todo", title: "To Do", color: "bg-gray-100 dark:bg-gray-800" },

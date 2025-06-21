@@ -135,7 +135,6 @@ const Calendar = () => {
         </button>
       </div>
 
-      {/* Calendar Controls */}
       <div
         className={`p-4 rounded-lg border flex items-center justify-between ${
           darkMode ? "bg-dark-900 border-dark-700" : "bg-white border-gray-200"
@@ -219,7 +218,6 @@ const Calendar = () => {
             ))}
           </div>
 
-          {/* Calendar Days */}
           <div className="grid grid-cols-7">
             {days.map((day, index) => {
               const dayEvents = getEventsForDate(day);

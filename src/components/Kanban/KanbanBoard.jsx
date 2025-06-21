@@ -8,7 +8,6 @@ import {
   useSensor,
   useSensors,
 } from "@dnd-kit/core";
-import { arrayMove, SortableContext } from "@dnd-kit/sortable";
 import { Plus, Filter } from "lucide-react";
 import { useKanban } from "../../contexts/KanbanContext";
 import KanbanColumn from "./KanbanColumn";
@@ -104,7 +103,6 @@ const KanbanBoard = () => {
         </button>
       </div>
 
-      {/* Kanban Board */}
       <DndContext
         sensors={sensors}
         collisionDetection={closestCorners}
@@ -127,7 +125,6 @@ const KanbanBoard = () => {
         </DragOverlay>
       </DndContext>
 
-      {/* Add Task Modal */}
       {showAddModal && <AddTaskModal onClose={() => setShowAddModal(false)} />}
     </div>
   );

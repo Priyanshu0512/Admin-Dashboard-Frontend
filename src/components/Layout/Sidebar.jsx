@@ -1,17 +1,7 @@
 import React from "react";
-import {
-  LayoutDashboard,
-  Users,
-  FileText,
-  BarChart3,
-  Calendar,
-  Trello,
-  Table,
-  Settings,
-  ChevronLeft,
-  ChevronRight,
-} from "lucide-react";
+import { LayoutDashboard, ChevronLeft, ChevronRight } from "lucide-react";
 import { useTheme } from "../../contexts/ThemeContext";
+import { menuItems } from "../../constants/menuItems";
 
 const Sidebar = ({
   activeTab,
@@ -23,20 +13,8 @@ const Sidebar = ({
 }) => {
   const { darkMode } = useTheme();
 
-  const menuItems = [
-    { id: "dashboard", label: "Dashboard", icon: LayoutDashboard },
-    { id: "analytics", label: "Analytics", icon: BarChart3 },
-    { id: "users", label: "Users", icon: Users },
-    { id: "reports", label: "Reports", icon: FileText },
-    { id: "calendar", label: "Calendar", icon: Calendar },
-    { id: "kanban", label: "Kanban", icon: Trello },
-    { id: "tables", label: "Tables", icon: Table },
-    { id: "settings", label: "Settings", icon: Settings },
-  ];
-
   return (
     <>
-      {/* Mobile Overlay */}
       {sidebarOpen && (
         <div
           className="fixed inset-0 z-20 bg-black bg-opacity-50 lg:hidden"
@@ -44,7 +22,6 @@ const Sidebar = ({
         />
       )}
 
-      {/* Sidebar */}
       <aside
         className={`fixed top-0 left-0 z-30 h-full transition-all duration-300 ease-in-out border-r ${
           darkMode ? "bg-gray-900 border-gray-700" : "bg-white border-gray-200"
@@ -54,7 +31,6 @@ const Sidebar = ({
             : "-translate-x-full"
         } ${collapsed ? "w-16" : "w-64"}`}
       >
-        {/* Header */}
         <div
           className={`flex items-center justify-between p-4 border-b ${
             darkMode ? "border-gray-700" : "border-gray-200"
@@ -91,7 +67,6 @@ const Sidebar = ({
           </button>
         </div>
 
-        {/* Navigation */}
         <nav className="p-4 space-y-2">
           {menuItems.map((item) => {
             const Icon = item.icon;
@@ -116,7 +91,7 @@ const Sidebar = ({
                 title={collapsed ? item.label : ""}
               >
                 <Icon
-                  className={`h-5 w-5 ${collapsed ? "" : "mr-3"} ${
+                  className={`h-5 w-5 ${collapsed ? "" : "mr-2"} ${
                     isActive
                       ? "text-current"
                       : "group-hover:scale-110 transition-transform"
@@ -130,7 +105,6 @@ const Sidebar = ({
           })}
         </nav>
 
-        {/* Footer */}
         {!collapsed && (
           <div
             className={`absolute bottom-4 left-4 right-4 p-4 rounded-lg ${

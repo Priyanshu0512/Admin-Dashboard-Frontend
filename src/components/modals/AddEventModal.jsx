@@ -1,27 +1,19 @@
-import React, { useState } from 'react';
-import { X, Calendar, Clock, MapPin, Users, Type } from 'lucide-react';
-import { useTheme } from '../../contexts/ThemeContext';
+import React, { useState } from "react";
+import { X, MapPin, Users, Type } from "lucide-react";
+import { useTheme } from "../../contexts/ThemeContext";
+import { colorOptions } from "../../constants/options";
 
 const AddEventModal = ({ isOpen, onClose, onAddEvent }) => {
   const { darkMode } = useTheme();
   const [formData, setFormData] = useState({
-    title: '',
-    description: '',
-    start: '',
-    end: '',
-    location: '',
-    attendees: '',
-    color: 'bg-blue-500'
+    title: "",
+    description: "",
+    start: "",
+    end: "",
+    location: "",
+    attendees: "",
+    color: "bg-blue-500",
   });
-
-  const colorOptions = [
-    { value: 'bg-blue-500', label: 'Blue' },
-    { value: 'bg-green-500', label: 'Green' },
-    { value: 'bg-purple-500', label: 'Purple' },
-    { value: 'bg-orange-500', label: 'Orange' },
-    { value: 'bg-red-500', label: 'Red' },
-    { value: 'bg-pink-500', label: 'Pink' }
-  ];
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -33,25 +25,25 @@ const AddEventModal = ({ isOpen, onClose, onAddEvent }) => {
       end: new Date(formData.end),
       location: formData.location,
       attendees: parseInt(formData.attendees) || 1,
-      color: formData.color
+      color: formData.color,
     };
     onAddEvent(newEvent);
     setFormData({
-      title: '',
-      description: '',
-      start: '',
-      end: '',
-      location: '',
-      attendees: '',
-      color: 'bg-blue-500'
+      title: "",
+      description: "",
+      start: "",
+      end: "",
+      location: "",
+      attendees: "",
+      color: "bg-blue-500",
     });
     onClose();
   };
 
   const handleChange = (e) => {
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     }));
   };
 
@@ -60,23 +52,31 @@ const AddEventModal = ({ isOpen, onClose, onAddEvent }) => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
       <div className="fixed inset-0 bg-black bg-opacity-50" onClick={onClose} />
-      <div className={`relative w-full max-w-md mx-4 rounded-lg shadow-xl ${
-        darkMode ? 'bg-dark-900 border border-dark-700' : 'bg-white border border-gray-200'
-      }`}>
-        <div className={`flex items-center justify-between p-6 border-b ${
-          darkMode ? 'border-dark-700' : 'border-gray-200'
-        }`}>
-          <h3 className={`text-lg font-semibold ${
-            darkMode ? 'text-white' : 'text-gray-900'
-          }`}>
+      <div
+        className={`relative w-full max-w-md mx-4 rounded-lg shadow-xl ${
+          darkMode
+            ? "bg-dark-900 border border-dark-700"
+            : "bg-white border border-gray-200"
+        }`}
+      >
+        <div
+          className={`flex items-center justify-between p-6 border-b ${
+            darkMode ? "border-dark-700" : "border-gray-200"
+          }`}
+        >
+          <h3
+            className={`text-lg font-semibold ${
+              darkMode ? "text-white" : "text-gray-900"
+            }`}
+          >
             Add New Event
           </h3>
           <button
             onClick={onClose}
             className={`p-1 rounded-lg transition-colors ${
-              darkMode 
-                ? 'hover:bg-dark-800 text-gray-400 hover:text-gray-200' 
-                : 'hover:bg-gray-100 text-gray-600 hover:text-gray-900'
+              darkMode
+                ? "hover:bg-dark-800 text-gray-400 hover:text-gray-200"
+                : "hover:bg-gray-100 text-gray-600 hover:text-gray-900"
             }`}
           >
             <X className="h-5 w-5" />
@@ -85,15 +85,19 @@ const AddEventModal = ({ isOpen, onClose, onAddEvent }) => {
 
         <form onSubmit={handleSubmit} className="p-6 space-y-4">
           <div>
-            <label className={`block text-sm font-medium mb-2 ${
-              darkMode ? 'text-gray-200' : 'text-gray-700'
-            }`}>
+            <label
+              className={`block text-sm font-medium mb-2 ${
+                darkMode ? "text-gray-200" : "text-gray-700"
+              }`}
+            >
               Event Title
             </label>
             <div className="relative">
-              <Type className={`absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 ${
-                darkMode ? 'text-gray-400' : 'text-gray-500'
-              }`} />
+              <Type
+                className={`absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 ${
+                  darkMode ? "text-gray-400" : "text-gray-500"
+                }`}
+              />
               <input
                 type="text"
                 name="title"
@@ -101,9 +105,9 @@ const AddEventModal = ({ isOpen, onClose, onAddEvent }) => {
                 onChange={handleChange}
                 required
                 className={`w-full pl-10 pr-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                  darkMode 
-                    ? 'bg-dark-800 border-dark-700 text-white' 
-                    : 'bg-white border-gray-300 text-gray-900'
+                  darkMode
+                    ? "bg-dark-800 border-dark-700 text-white"
+                    : "bg-white border-gray-300 text-gray-900"
                 }`}
                 placeholder="Enter event title"
               />
@@ -111,9 +115,11 @@ const AddEventModal = ({ isOpen, onClose, onAddEvent }) => {
           </div>
 
           <div>
-            <label className={`block text-sm font-medium mb-2 ${
-              darkMode ? 'text-gray-200' : 'text-gray-700'
-            }`}>
+            <label
+              className={`block text-sm font-medium mb-2 ${
+                darkMode ? "text-gray-200" : "text-gray-700"
+              }`}
+            >
               Description
             </label>
             <textarea
@@ -122,9 +128,9 @@ const AddEventModal = ({ isOpen, onClose, onAddEvent }) => {
               onChange={handleChange}
               rows={3}
               className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                darkMode 
-                  ? 'bg-dark-800 border-dark-700 text-white' 
-                  : 'bg-white border-gray-300 text-gray-900'
+                darkMode
+                  ? "bg-dark-800 border-dark-700 text-white"
+                  : "bg-white border-gray-300 text-gray-900"
               }`}
               placeholder="Enter event description"
             />
@@ -132,9 +138,11 @@ const AddEventModal = ({ isOpen, onClose, onAddEvent }) => {
 
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className={`block text-sm font-medium mb-2 ${
-                darkMode ? 'text-gray-200' : 'text-gray-700'
-              }`}>
+              <label
+                className={`block text-sm font-medium mb-2 ${
+                  darkMode ? "text-gray-200" : "text-gray-700"
+                }`}
+              >
                 Start Date & Time
               </label>
               <input
@@ -144,17 +152,19 @@ const AddEventModal = ({ isOpen, onClose, onAddEvent }) => {
                 onChange={handleChange}
                 required
                 className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                  darkMode 
-                    ? 'bg-dark-800 border-dark-700 text-white' 
-                    : 'bg-white border-gray-300 text-gray-900'
+                  darkMode
+                    ? "bg-dark-800 border-dark-700 text-white"
+                    : "bg-white border-gray-300 text-gray-900"
                 }`}
               />
             </div>
 
             <div>
-              <label className={`block text-sm font-medium mb-2 ${
-                darkMode ? 'text-gray-200' : 'text-gray-700'
-              }`}>
+              <label
+                className={`block text-sm font-medium mb-2 ${
+                  darkMode ? "text-gray-200" : "text-gray-700"
+                }`}
+              >
                 End Date & Time
               </label>
               <input
@@ -164,33 +174,37 @@ const AddEventModal = ({ isOpen, onClose, onAddEvent }) => {
                 onChange={handleChange}
                 required
                 className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                  darkMode 
-                    ? 'bg-dark-800 border-dark-700 text-white' 
-                    : 'bg-white border-gray-300 text-gray-900'
+                  darkMode
+                    ? "bg-dark-800 border-dark-700 text-white"
+                    : "bg-white border-gray-300 text-gray-900"
                 }`}
               />
             </div>
           </div>
 
           <div>
-            <label className={`block text-sm font-medium mb-2 ${
-              darkMode ? 'text-gray-200' : 'text-gray-700'
-            }`}>
+            <label
+              className={`block text-sm font-medium mb-2 ${
+                darkMode ? "text-gray-200" : "text-gray-700"
+              }`}
+            >
               Location
             </label>
             <div className="relative">
-              <MapPin className={`absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 ${
-                darkMode ? 'text-gray-400' : 'text-gray-500'
-              }`} />
+              <MapPin
+                className={`absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 ${
+                  darkMode ? "text-gray-400" : "text-gray-500"
+                }`}
+              />
               <input
                 type="text"
                 name="location"
                 value={formData.location}
                 onChange={handleChange}
                 className={`w-full pl-10 pr-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                  darkMode 
-                    ? 'bg-dark-800 border-dark-700 text-white' 
-                    : 'bg-white border-gray-300 text-gray-900'
+                  darkMode
+                    ? "bg-dark-800 border-dark-700 text-white"
+                    : "bg-white border-gray-300 text-gray-900"
                 }`}
                 placeholder="Enter location"
               />
@@ -199,15 +213,19 @@ const AddEventModal = ({ isOpen, onClose, onAddEvent }) => {
 
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className={`block text-sm font-medium mb-2 ${
-                darkMode ? 'text-gray-200' : 'text-gray-700'
-              }`}>
+              <label
+                className={`block text-sm font-medium mb-2 ${
+                  darkMode ? "text-gray-200" : "text-gray-700"
+                }`}
+              >
                 Attendees
               </label>
               <div className="relative">
-                <Users className={`absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 ${
-                  darkMode ? 'text-gray-400' : 'text-gray-500'
-                }`} />
+                <Users
+                  className={`absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 ${
+                    darkMode ? "text-gray-400" : "text-gray-500"
+                  }`}
+                />
                 <input
                   type="number"
                   name="attendees"
@@ -215,9 +233,9 @@ const AddEventModal = ({ isOpen, onClose, onAddEvent }) => {
                   onChange={handleChange}
                   min="1"
                   className={`w-full pl-10 pr-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                    darkMode 
-                      ? 'bg-dark-800 border-dark-700 text-white' 
-                      : 'bg-white border-gray-300 text-gray-900'
+                    darkMode
+                      ? "bg-dark-800 border-dark-700 text-white"
+                      : "bg-white border-gray-300 text-gray-900"
                   }`}
                   placeholder="Number of attendees"
                 />
@@ -225,9 +243,11 @@ const AddEventModal = ({ isOpen, onClose, onAddEvent }) => {
             </div>
 
             <div>
-              <label className={`block text-sm font-medium mb-2 ${
-                darkMode ? 'text-gray-200' : 'text-gray-700'
-              }`}>
+              <label
+                className={`block text-sm font-medium mb-2 ${
+                  darkMode ? "text-gray-200" : "text-gray-700"
+                }`}
+              >
                 Color
               </label>
               <select
@@ -235,9 +255,9 @@ const AddEventModal = ({ isOpen, onClose, onAddEvent }) => {
                 value={formData.color}
                 onChange={handleChange}
                 className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                  darkMode 
-                    ? 'bg-dark-800 border-dark-700 text-white' 
-                    : 'bg-white border-gray-300 text-gray-900'
+                  darkMode
+                    ? "bg-dark-800 border-dark-700 text-white"
+                    : "bg-white border-gray-300 text-gray-900"
                 }`}
               >
                 {colorOptions.map((option) => (
@@ -254,9 +274,9 @@ const AddEventModal = ({ isOpen, onClose, onAddEvent }) => {
               type="button"
               onClick={onClose}
               className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
-                darkMode 
-                  ? 'bg-dark-800 text-gray-300 hover:bg-dark-700' 
-                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                darkMode
+                  ? "bg-dark-800 text-gray-300 hover:bg-dark-700"
+                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
               }`}
             >
               Cancel
