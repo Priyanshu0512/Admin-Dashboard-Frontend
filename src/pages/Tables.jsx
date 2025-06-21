@@ -143,7 +143,7 @@ const Tables = () => {
             <div
               className={`absolute right-0 mt-2 w-48 rounded-lg shadow-lg border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10 ${
                 darkMode
-                  ? "bg-dark-900 border-dark-700"
+                  ? "bg-gray-800 border-dark-700"
                   : "bg-white border-gray-200"
               }`}
             >
@@ -169,7 +169,7 @@ const Tables = () => {
       </div>
       <div
         className={`p-4 rounded-lg border ${
-          darkMode ? "bg-dark-900 border-dark-700" : "bg-white border-gray-200"
+          darkMode ? "bg-gray-800 border-dark-700" : "bg-white border-gray-200"
         }`}
       >
         <div className="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0">
@@ -211,12 +211,12 @@ const Tables = () => {
 
       <div
         className={`rounded-lg border overflow-hidden ${
-          darkMode ? "bg-dark-900 border-dark-700" : "bg-white border-gray-200"
+          darkMode ? "bg-gray-800 border-dark-700" : "bg-white border-gray-200"
         }`}
       >
         <div className="overflow-x-auto">
           <table className="w-full">
-            <thead className={`${darkMode ? "bg-dark-800" : "bg-gray-50"}`}>
+            <thead className={`${darkMode ? "bg-gray-800" : "bg-gray-50"}`}>
               <tr>
                 <th className="px-6 py-3 text-left">
                   <input
@@ -270,7 +270,7 @@ const Tables = () => {
             </thead>
             <tbody
               className={`divide-y ${
-                darkMode ? "divide-dark-700" : "divide-gray-200"
+                darkMode ? "bg-gray-800" : "divide-gray-200"
               }`}
             >
               {filteredData.map((item) => (
@@ -378,9 +378,7 @@ const Tables = () => {
 
         <div
           className={`px-6 py-3 border-t flex items-center justify-between ${
-            darkMode
-              ? "border-dark-700 bg-dark-900"
-              : "border-gray-200 bg-gray-50"
+            darkMode ? "bg-gray-800 bg-dark-900" : "border-gray-200 bg-gray-50"
           }`}
         >
           <div
@@ -394,7 +392,7 @@ const Tables = () => {
             <button
               className={`px-3 py-1 text-sm border rounded transition-colors ${
                 darkMode
-                  ? "border-dark-700 text-gray-300 hover:bg-dark-800"
+                  ? "bg-gray-800 text-gray-300 hover:bg-dark-800"
                   : "border-gray-300 text-gray-700 hover:bg-gray-50"
               }`}
             >
@@ -406,7 +404,7 @@ const Tables = () => {
             <button
               className={`px-3 py-1 text-sm border rounded transition-colors ${
                 darkMode
-                  ? "border-dark-700 text-gray-300 hover:bg-dark-800"
+                  ? "bg-gray-800 text-gray-300 hover:bg-dark-800"
                   : "border-gray-300 text-gray-700 hover:bg-gray-50"
               }`}
             >
@@ -415,7 +413,7 @@ const Tables = () => {
             <button
               className={`px-3 py-1 text-sm border rounded transition-colors ${
                 darkMode
-                  ? "border-dark-700 text-gray-300 hover:bg-dark-800"
+                  ? "bg-gray-800 text-gray-300 hover:bg-dark-800"
                   : "border-gray-300 text-gray-700 hover:bg-gray-50"
               }`}
             >

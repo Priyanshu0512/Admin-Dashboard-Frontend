@@ -137,7 +137,7 @@ const Calendar = () => {
 
       <div
         className={`p-4 rounded-lg border flex items-center justify-between ${
-          darkMode ? "bg-dark-900 border-dark-700" : "bg-white border-gray-200"
+          darkMode ? "bg-gray-800 border-dark-700" : "bg-white border-gray-200"
         }`}
       >
         <div className="flex items-center space-x-4">
@@ -145,7 +145,7 @@ const Calendar = () => {
             onClick={() => navigateMonth(-1)}
             className={`p-2 rounded-lg transition-colors ${
               darkMode
-                ? "hover:bg-dark-800 text-gray-400 hover:text-gray-200"
+                ? "hover:bg-gray-800 text-gray-400 hover:text-gray-200"
                 : "hover:bg-gray-100 text-gray-600 hover:text-gray-900"
             }`}
           >
@@ -164,7 +164,7 @@ const Calendar = () => {
             onClick={() => navigateMonth(1)}
             className={`p-2 rounded-lg transition-colors ${
               darkMode
-                ? "hover:bg-dark-800 text-gray-400 hover:text-gray-200"
+                ? "hover:bg-gray-800 text-gray-400 hover:text-gray-200"
                 : "hover:bg-gray-100 text-gray-600 hover:text-gray-900"
             }`}
           >
@@ -183,7 +183,7 @@ const Calendar = () => {
               onClick={() => setView(viewType)}
               className={`px-3 py-1 text-sm font-medium rounded-md transition-colors capitalize ${
                 view === viewType
-                  ? "bg-white dark:bg-dark-700 text-blue-600 dark:text-blue-400 shadow-sm"
+                  ? "bg-white dark:bg-gray-800 text-blue-600 dark:text-blue-400 shadow-sm"
                   : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
               }`}
             >
@@ -197,13 +197,13 @@ const Calendar = () => {
         <div
           className={`lg:col-span-3 rounded-lg border overflow-hidden ${
             darkMode
-              ? "bg-dark-900 border-dark-700"
+              ? "bg-gray-800 border-dark-700"
               : "bg-white border-gray-200"
           }`}
         >
           <div
             className={`grid grid-cols-7 ${
-              darkMode ? "bg-dark-800" : "bg-gray-50"
+              darkMode ? "bg-gray-800" : "bg-gray-50"
             }`}
           >
             {weekDays.map((day) => (
@@ -278,7 +278,7 @@ const Calendar = () => {
         <div
           className={`rounded-lg border p-6 ${
             darkMode
-              ? "bg-dark-900 border-dark-700"
+              ? "bg-gray-800 border-dark-700"
               : "bg-white border-gray-200"
           }`}
         >

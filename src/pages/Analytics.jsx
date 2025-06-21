@@ -61,7 +61,7 @@ const Analytics = () => {
             onChange={(e) => setDateRange(e.target.value)}
             className={`px-4 py-2 rounded-lg border text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 ${
               darkMode
-                ? "bg-dark-900 border-dark-700 text-white"
+                ? "bg-blue-600 border-dark-700 text-white"
                 : "bg-white border-gray-300 text-gray-900"
             }`}
           >
@@ -74,7 +74,7 @@ const Analytics = () => {
           <button
             className={`flex items-center px-4 py-2 rounded-lg border text-sm transition-colors ${
               darkMode
-                ? "bg-dark-900 border-dark-700 text-white hover:bg-dark-800"
+                ? "bg-blue-600 border-dark-700 text-white hover:bg-dark-800"
                 : "bg-white border-gray-300 text-gray-700 hover:bg-gray-50"
             }`}
           >
@@ -131,7 +131,7 @@ const Analytics = () => {
               key={metric.label}
               className={`p-6 rounded-xl border transition-all duration-200 hover:shadow-lg ${
                 darkMode
-                  ? "bg-dark-900 border-dark-700 hover:shadow-black/20"
+                  ? " bg-gray-800 border-dark-700 hover:shadow-black/20"
                   : "bg-white border-gray-200 hover:shadow-gray-200/50"
               }`}
             >
@@ -207,7 +207,7 @@ const Analytics = () => {
 
       <div
         className={`rounded-xl border p-6 ${
-          darkMode ? "bg-dark-900 border-dark-700" : "bg-white border-gray-200"
+          darkMode ? "bg-gray-800 border-dark-700" : "bg-white border-gray-200"
         }`}
       >
         <h3
@@ -222,7 +222,7 @@ const Analytics = () => {
             <thead>
               <tr
                 className={`border-b ${
-                  darkMode ? "border-dark-700" : "border-gray-200"
+                  darkMode ? "bg-gray-800" : "border-gray-200"
                 }`}
               >
                 <th

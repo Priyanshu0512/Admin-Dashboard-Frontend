@@ -52,7 +52,6 @@ const Reports = () => {
 
   return (
     <div className="space-y-6" id="reports-dashboard">
-      {/* Header */}
       <div className="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0">
         <div>
           <h1
@@ -73,7 +72,7 @@ const Reports = () => {
             onChange={(e) => setDateRange(e.target.value)}
             className={`px-4 py-2 rounded-lg border text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 ${
               darkMode
-                ? "bg-dark-900 border-dark-700 text-white"
+                ? "bg-gray-800 border-dark-700 text-white"
                 : "bg-white border-gray-300 text-gray-900"
             }`}
           >
@@ -126,7 +125,7 @@ const Reports = () => {
 
       <div
         className={`p-4 rounded-lg border ${
-          darkMode ? "bg-dark-900 border-dark-700" : "bg-white border-gray-200"
+          darkMode ? "bg-gray-800 border-dark-700" : "bg-white border-gray-200"
         }`}
       >
         <div className="flex flex-wrap gap-2">
@@ -160,7 +159,7 @@ const Reports = () => {
               key={metric.title}
               className={`p-6 rounded-xl border transition-all duration-200 hover:shadow-lg ${
                 darkMode
-                  ? "bg-dark-900 border-dark-700 hover:shadow-black/20"
+                  ? "bg-gray-800 border-dark-700 hover:shadow-black/20"
                   : "bg-white border-gray-200 hover:shadow-gray-200/50"
               }`}
             >
@@ -275,7 +274,7 @@ const Reports = () => {
 
       <div
         className={`rounded-xl border p-6 ${
-          darkMode ? "bg-dark-900 border-dark-700" : "bg-white border-gray-200"
+          darkMode ? "bg-gray-800 border-dark-700" : "bg-white border-gray-200"
         }`}
       >
         <h3

@@ -153,7 +153,7 @@ const Users = () => {
             <button
               className={`flex items-center px-4 py-2 rounded-lg border text-sm transition-colors ${
                 darkMode
-                  ? "bg-dark-900 border-dark-700 text-white hover:bg-dark-800"
+                  ? "bg-gray-800 border-dark-700 text-white hover:bg-dark-800"
                   : "bg-white border-gray-300 text-gray-700 hover:bg-gray-50"
               }`}
             >
@@ -197,7 +197,7 @@ const Users = () => {
 
       <div
         className={`p-4 rounded-lg border ${
-          darkMode ? "bg-dark-900 border-dark-700" : "bg-white border-gray-200"
+          darkMode ? "bg-gray-800 border-dark-700" : "bg-white border-gray-200"
         }`}
       >
         <div className="flex flex-col md:flex-row md:items-center space-y-4 md:space-y-0 md:space-x-4">
@@ -214,7 +214,7 @@ const Users = () => {
               onChange={(e) => setSearchTerm(e.target.value)}
               className={`pl-10 pr-4 py-2 w-full rounded-lg border text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 ${
                 darkMode
-                  ? "bg-dark-800 border-dark-700 text-white placeholder-gray-400"
+                  ? "bg-gray-800 border-dark-700 text-white placeholder-gray-400"
                   : "bg-gray-50 border-gray-300 text-gray-900 placeholder-gray-500"
               }`}
             />
@@ -225,7 +225,7 @@ const Users = () => {
             onChange={(e) => setFilterStatus(e.target.value)}
             className={`px-4 py-2 rounded-lg border text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 ${
               darkMode
-                ? "bg-dark-800 border-dark-700 text-white"
+                ? "bg-gray-800 border-dark-700 text-white"
                 : "bg-white border-gray-300 text-gray-900"
             }`}
           >
@@ -240,7 +240,7 @@ const Users = () => {
             onChange={(e) => setSortBy(e.target.value)}
             className={`px-4 py-2 rounded-lg border text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 ${
               darkMode
-                ? "bg-dark-800 border-dark-700 text-white"
+                ? "bg-gray-800 border-dark-700 text-white"
                 : "bg-white border-gray-300 text-gray-900"
             }`}
           >
@@ -254,12 +254,12 @@ const Users = () => {
 
       <div
         className={`rounded-lg border overflow-hidden ${
-          darkMode ? "bg-dark-900 border-dark-700" : "bg-white border-gray-200"
+          darkMode ? "bg-gray-800 border-dark-700" : "bg-white border-gray-200"
         }`}
       >
         <div className="overflow-x-auto">
           <table className="w-full">
-            <thead className={`${darkMode ? "bg-dark-800" : "bg-gray-50"}`}>
+            <thead className={`${darkMode ? "bg-gray-800" : "bg-gray-50"}`}>
               <tr>
                 <th
                   className={`text-left py-3 px-6 font-medium ${
@@ -421,7 +421,7 @@ const Users = () => {
 
       <div
         className={`flex items-center justify-between px-4 py-3 border rounded-lg ${
-          darkMode ? "bg-dark-900 border-dark-700" : "bg-white border-gray-200"
+          darkMode ? "bg-gray-800 border-dark-700" : "bg-white border-gray-200"
         }`}
       >
         <div
