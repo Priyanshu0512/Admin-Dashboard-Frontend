@@ -91,7 +91,7 @@ const Sidebar = ({
                 title={collapsed ? item.label : ""}
               >
                 <Icon
-                  className={`h-5 w-5 ${collapsed ? "" : "mr-2"} ${
+                  className={`h-5 w-5 ${collapsed ? "w-20 h-20" : "mr-2"} ${
                     isActive
                       ? "text-current"
                       : "group-hover:scale-110 transition-transform"
