@@ -1,6 +1,6 @@
-import { useAuth } from "../../contexts/AuthContext";
-
-import LoginPage from "./LoginPage";
+import React from 'react';
+import { useAuth } from '../../contexts/AuthContext';
+import LoginPage from './LoginPage';
 
 const ProtectedRoute = ({ children }) => {
   const { user, loading } = useAuth();
@@ -16,6 +16,7 @@ const ProtectedRoute = ({ children }) => {
   if (!user) {
     return <LoginPage />;
   }
+
   return children;
 };
 

@@ -1,15 +1,23 @@
-import React from "react";
-import { useState } from "react";
-import { ThemeProvider } from "./contexts/ThemeContext";
+import React, { useState } from "react";
 import { AuthProvider } from "./contexts/AuthContext";
+import { ThemeProvider } from "./contexts/ThemeContext";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
-import Dashboard from "./pages/dashboard";
+import Layout from "./components/Layout/Layout";
+import { Dashboard } from "./pages/Dashboard";
+import Analytics from "./pages/Analytics";
+import Users from "./pages/Users";
+import Reports from "./pages/Reports";
+import Calendar from "./pages/Calendar";
+import Tables from "./pages/Tables";
+import Settings from "./pages/Settings";
+import KanbanBoard from "./components/Kanban/KanbanBoard";
+import { KanbanProvider } from "./contexts/KanbanContext";
 function App() {
   const [activeTab, setActiveTab] = useState("dashboard");
   const renderContent = () => {
     switch (activeTab) {
       case "dashboard":
-        return <div>hi</div>;
+        return <Dashboard />;
       case "analytics":
         return <Analytics />;
       case "users":
@@ -31,11 +39,13 @@ function App() {
   return (
     <ThemeProvider>
       <AuthProvider>
-        <ProtectedRoute>
-          <Layout activeTab={activeTab} setActiveTab={setActiveTab}>
-            {renderContent()}
-          </Layout>
-        </ProtectedRoute>
+        <KanbanProvider>
+          <ProtectedRoute>
+            <Layout activeTab={activeTab} setActiveTab={setActiveTab}>
+              {renderContent()}
+            </Layout>
+          </ProtectedRoute>
+        </KanbanProvider>
       </AuthProvider>
     </ThemeProvider>
   );

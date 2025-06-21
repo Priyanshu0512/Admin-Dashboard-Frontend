@@ -8,7 +8,7 @@ import {
   useSensor,
   useSensors,
 } from "@dnd-kit/core";
-import { SortableContext } from "@dnd-kit/sortable";
+import { arrayMove, SortableContext } from "@dnd-kit/sortable";
 import { Plus, Filter } from "lucide-react";
 import { useKanban } from "../../contexts/KanbanContext";
 import KanbanColumn from "./KanbanColumn";
@@ -36,6 +36,7 @@ const KanbanBoard = () => {
     const activeId = active.id;
     const overId = over.id;
 
+    // Find the containers
     const activeContainer = findContainer(activeId);
     const overContainer = findContainer(overId);
 
@@ -50,7 +51,6 @@ const KanbanBoard = () => {
     moveTask(activeId, overContainer);
   };
 
-  // eslint-disable-next-line no-unused-vars
   const handleDragEnd = (event) => {
     setActiveId(null);
   };
@@ -74,6 +74,7 @@ const KanbanBoard = () => {
 
   return (
     <div className="p-6">
+      {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center space-x-4">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
@@ -102,6 +103,8 @@ const KanbanBoard = () => {
           <span>Add Task</span>
         </button>
       </div>
+
+      {/* Kanban Board */}
       <DndContext
         sensors={sensors}
         collisionDetection={closestCorners}
@@ -124,6 +127,7 @@ const KanbanBoard = () => {
         </DragOverlay>
       </DndContext>
 
+      {/* Add Task Modal */}
       {showAddModal && <AddTaskModal onClose={() => setShowAddModal(false)} />}
     </div>
   );

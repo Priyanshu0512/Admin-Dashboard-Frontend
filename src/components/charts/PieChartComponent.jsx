@@ -1,8 +1,22 @@
-import React from 'react';
-import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from 'recharts';
-import { useTheme } from '../../contexts/ThemeContext';
+import React from "react";
+import {
+  PieChart,
+  Pie,
+  Cell,
+  ResponsiveContainer,
+  Tooltip,
+  Legend,
+} from "recharts";
+import { useTheme } from "../../contexts/ThemeContext";
 
-const COLORS = ['#3b82f6', '#14b8a6', '#f97316', '#ef4444', '#8b5cf6', '#06b6d4'];
+const COLORS = [
+  "#3b82f6",
+  "#14b8a6",
+  "#f97316",
+  "#ef4444",
+  "#8b5cf6",
+  "#06b6d4",
+];
 
 const PieChartComponent = ({ data }) => {
   const { darkMode } = useTheme();
@@ -15,7 +29,9 @@ const PieChartComponent = ({ data }) => {
           cx="50%"
           cy="50%"
           labelLine={false}
-          label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
+          label={({ name, percent }) =>
+            `${name} ${(percent * 100).toFixed(0)}%`
+          }
           outerRadius={80}
           fill="#8884d8"
           dataKey="value"
@@ -24,17 +40,17 @@ const PieChartComponent = ({ data }) => {
             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
           ))}
         </Pie>
-        <Tooltip 
+        <Tooltip
           contentStyle={{
-            backgroundColor: darkMode ? '#1f2937' : '#ffffff',
-            border: `1px solid ${darkMode ? '#374151' : '#e5e7eb'}`,
-            borderRadius: '8px',
-            color: darkMode ? '#ffffff' : '#000000'
+            backgroundColor: darkMode ? "#1f2937" : "#ffffff",
+            border: `1px solid ${darkMode ? "#374151" : "#e5e7eb"}`,
+            borderRadius: "8px",
+            color: darkMode ? "#ffffff" : "#000000",
           }}
         />
-        <Legend 
+        <Legend
           wrapperStyle={{
-            color: darkMode ? '#ffffff' : '#000000'
+            color: darkMode ? "#ffffff" : "#000000",
           }}
         />
       </PieChart>
