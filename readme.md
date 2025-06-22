@@ -4,9 +4,7 @@ A modern, feature-rich dashboard application built with React 18, Vite, and Tail
 
 ---
 
-
 ![Dashboard Preview](https://github.com/user-attachments/assets/d1c3a085-41de-4be7-b4c2-b5e4236bc9eb)
-
 
 ## ✨ Features
 
@@ -25,7 +23,6 @@ A modern, feature-rich dashboard application built with React 18, Vite, and Tail
 ![Features Overview](https://github.com/user-attachments/assets/48825ba4-b4c9-4d2c-a082-b0ba0146a297)
 
 ---
-
 
 ## 🛠️ Tech Stack
 
@@ -95,7 +92,6 @@ The application will start on `http://localhost:5173` (or the next available por
 
 ---
 
-
 ## 📁 Project Structure
 
 ```
@@ -131,7 +127,6 @@ react-dashboard-app/
 ├── vite.config.ts        # Vite configuration
 └── package.json          # Project dependencies and scripts
 ```
-
 
 ## 📚 Learning Resources
 
