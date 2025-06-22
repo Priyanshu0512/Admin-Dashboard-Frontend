@@ -2,6 +2,9 @@
 
 A modern, feature-rich dashboard application built with React 18, Vite, and Tailwind CSS. This comprehensive dashboard includes user management, analytics, **Kanban** boards, calendar functionality, and much more.
 
+---
+
+
 ![Dashboard Preview](https://github.com/user-attachments/assets/d1c3a085-41de-4be7-b4c2-b5e4236bc9eb)
 
 
@@ -17,7 +20,11 @@ A modern, feature-rich dashboard application built with React 18, Vite, and Tail
 - **Analytics & Reports** - Interactive charts and data visualization
 - **Settings Panel** - Comprehensive application configuration
 
+---
+
 ![Features Overview](https://github.com/user-attachments/assets/48825ba4-b4c9-4d2c-a082-b0ba0146a297)
+
+---
 
 
 ## 🛠️ Tech Stack
@@ -82,7 +89,11 @@ yarn dev
 
 The application will start on `http://localhost:5173` (or the next available port).
 
+---
+
 ![Features Overview](https://github.com/user-attachments/assets/818ca102-ae40-4e26-bce6-04bf46036085)
+
+---
 
 
 ## 📁 Project Structure
@@ -121,7 +132,6 @@ react-dashboard-app/
 └── package.json          # Project dependencies and scripts
 ```
 
-![Dashboard Features](https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
 
 ## 📚 Learning Resources
 
